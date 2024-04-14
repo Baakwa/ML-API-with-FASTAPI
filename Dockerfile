@@ -1,18 +1,11 @@
 #Create a base image for Docker container
 FROM python:3.8.10
 
-#Create a working directory
-#WORKDIR/ app
-
 # Create a working directory named 'app'
 WORKDIR /app
 
-
 #Copy requirements.txt files into temporary folder in container
 COPY requirements.txt /tmp/requirements.txt
-
-#COPY requirements.txt /tmp/requirements.txt
-
 
 #Pip install packages in requirements.txt file
 RUN python -m pip install -r /tmp/requirements.txt
